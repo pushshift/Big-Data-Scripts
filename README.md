@@ -7,7 +7,13 @@ This is a simple Python program to read a reddit comment dump and print out the 
 
 Example usage:
 
-python popular-subreddits.py sample.bz2
+    python popular-subreddits.py sample.bz2
+
+**Linux command line Kung-Fu Examples**
+
+*Pretty print JSON and learn about the JSON object structure*
+
+    bzip2 -cd sample.bz2 | head -n1 | python -m json.tool
 
 **Location of main Reddit Data**
 

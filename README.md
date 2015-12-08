@@ -11,9 +11,21 @@ Example usage:
 
 **Linux command line Kung-Fu Examples**
 
-*Pretty print JSON and learn about the JSON object structure*
+The following commands will work on most Linux operating systems.  I am using Ubuntu 14.04 for these examples.
+
+*Pretty print JSON and learn about the JSON object structure using Python*
 
     bzip2 -cd sample.bz2 | head -n1 | python -m json.tool
+
+*Print the author from each JSON block using Perl*
+
+Make sure Cpanel::JSON::XS is installed
+
+    cpan Cpanel::JSON::XS
+
+Now you can do:
+
+    bzip2 -cd sample.bz2 | perl -MCpanel::JSON::XS -lne '$j=decode_json($_);print $j->{author}'
 
 **Location of main Reddit Data**
 

@@ -25,7 +25,11 @@ Make sure Cpanel::JSON::XS is installed
 
 Now you can do:
 
-    bzip2 -cd sample.bz2 | perl -MCpanel::JSON::XS -lne '$j=decode_json($_);print $j->{author}'
+    bzip2 -cd sample.bz2 | perl -MCpanel::JSON::XS -lne 'print decode_json($_)->{author}'
+
+*Sort these authors by number of times they have made a comment*
+
+    bzip2 -cd sample.bz2 | perl -MCpanel::JSON::XS -lne 'print decode_json($_)->{author}' | sort | uniq -c | sort -n
 
 **Location of main Reddit Data**
 
